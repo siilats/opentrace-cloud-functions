@@ -11,7 +11,8 @@ import formatTimestamp from "./utils/formatTimestamp";
  */
 const getUploadToken = async (uid: string, data: any, context: functions.https.CallableContext) => {
   console.log('getUploadToken:', 'uid', uid, 'data', data, 'ip', context.rawRequest.ip);
-
+  // tslint:disable-next-line:no-floating-promises
+  // storeUploadCodes(['']);
   let valid = false;
   if (data) {
     const uploadCodes = await retrieveUploadCodes();
